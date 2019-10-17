@@ -1,0 +1,8 @@
+body {
+    background-color: grey;
+}
+
+.border {
+    border: 10px solid #212629;
+    border-radius: 5px;
+}
