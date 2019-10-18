@@ -6,3 +6,15 @@ body {
     border: 10px solid #212629;
     border-radius: 5px;
 }
+
+.logo
+{
+    width: 285px;
+    height: 150px;
+}
+
+.card
+{
+    width: 100px;
+    height: 152px;
+}
