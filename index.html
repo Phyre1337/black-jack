@@ -9,18 +9,17 @@
     </head>
 
     <body>
-        <img src="Images/logo.png" width="285" height="150">
+        <img src="Images/logo.png" class="logo" draggable="false">
 
         <hr class="border">
 
         <p>Your card:</p>
-        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" id="cardDisplay" width="100px" height="152" draggable="false">
-        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" id="cardDisplay2" width="100px" height="152" draggable="false">
-        <p id="cardValue"></p>
+        <div id="userCards"></div>
+        <p id="score"></p>
 
         <br>
 
-        <button onClick="pickCard()">Deal Cards</button>
+        <button onClick="random()">Deal Cards</button>
     </body>
 
 </html>
