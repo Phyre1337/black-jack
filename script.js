@@ -298,18 +298,18 @@ function turns(turn)
 {
     if (turn == "start")
     {
-        random(player)
-        random(player)
+        random('player')
+        random('player')
 
-        random(dealerHidden)
-        random(dealer)
+        random('dealerHidden')
+        random('dealer')
     }
     else if (turn == "hit")
     {
-        random(player)
+        random('player')
     }
     else
     {
-        random(dealer)
+        random('dealer')
     }
 }
