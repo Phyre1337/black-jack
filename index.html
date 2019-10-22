@@ -13,12 +13,17 @@
 
         <hr class="border">
 
-        <button id="dealBtn" onClick="random()">Deal Cards</button>
+        <button id="dealBtn" onClick="turns(start)">Deal Cards</button>
         <button onClick="init()">Reset</button>
 
         <br>
 
-        <p>Your card:</p>
+        <p>Dealer's cards:</p>
+        <div id="dealerCards"></div>
+        <p id="score">0</p>
+        <br>
+
+        <p>Your cards:</p>
         <div id="userCards"></div>
         <p id="score">0</p>
 
