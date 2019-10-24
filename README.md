@@ -1,3 +1,3 @@
 # black-jack
 
-# Basic black jack game.
+Basic black jack game.
