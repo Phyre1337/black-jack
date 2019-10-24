@@ -10,22 +10,25 @@
 
     <body>
         <img src="Images/logo.png" class="logo" draggable="false">
+        <h1 id="winningMsg"></h1>
 
         <hr class="border">
 
         <button id="dealBtn" onClick="turns('start')">Deal Cards</button>
-        <button onClick="init()">Reset</button>
+        <button id="hitBtn" onClick="turns('hit')" disabled="true">Hit</button>
+        <button id="stayBtn" onClick="end()" disabled="true">Stay</button>
+        <button id="resetBtn" onClick="init()" disabled="true">Reset</button>
 
         <br>
 
         <p>Dealer's cards:</p>
         <div id="dealerCards"></div>
-        <p id="score">0</p>
+        <b id="dealerScore"></b>
         <br>
 
         <p>Your cards:</p>
         <div id="userCards"></div>
-        <p id="score">0</p>
+        <b id="score">0</b>
 
     </body>
 
