@@ -421,7 +421,7 @@ function end() // Function to end the game
         document.getElementById("faceDown").src = dealerHiddenCard; // Displays dealer's hidden card.
 
         // Score system to determine who wins and loses the game
-        if (dealerBusted == false && playerScore <= dealerScore) // If the dealer hasn't busted and is less or equal to player, they win
+        if (dealerBusted == false && playerScore < dealerScore) // If the dealer hasn't busted and greater than the player, they win
         {
             document.getElementById("winningMsg").innerHTML = "Dealer Wins!";
         }
@@ -440,6 +440,10 @@ function end() // Function to end the game
         else if (playerBusted == true && dealerBusted == true) // If both bust, nobody wins
         {
             document.getElementById("winningMsg").innerHTML = "Nobody Wins...";
+        }
+        else if (dealerBusted == true && playerBusted == true && playerScore == dealerScore)
+        {
+            document.getElementById("winningMsg").innerHTML = "Push - Nobody Wins...";  
         }
 
         document.getElementById("resetBtn").disabled = false; // Enables the button to reset game
