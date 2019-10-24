@@ -441,7 +441,7 @@ function end() // Function to end the game
         {
             document.getElementById("winningMsg").innerHTML = "Nobody Wins...";
         }
-        else if (dealerBusted == true && playerBusted == true && playerScore == dealerScore)
+        else if (dealerBusted == true && playerBusted == true && playerScore == dealerScore) // If both tie, nobody wins
         {
             document.getElementById("winningMsg").innerHTML = "Push - Nobody Wins...";  
         }
