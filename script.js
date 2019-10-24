@@ -429,11 +429,11 @@ function end() // Function to end the game
         {
             document.getElementById("winningMsg").innerHTML = "Player Wins!";
         }
-        else if (dealerBusted == true) // If the dealer busts, player wins
+        else if (dealerBusted == true && playerBusted == false) // If the dealer busts and the player hasn't, player wins
         {
             document.getElementById("winningMsg").innerHTML = "Player Wins!";
         }
-        else if (playerBusted == true) // If the player busts, dealer wins
+        else if (playerBusted == true && dealerBusted == false) // If the player busts and the dealer hasn't, dealer wins
         {
             document.getElementById("winningMsg").innerHTML = "Dealer Wins!";
         }
