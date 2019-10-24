@@ -217,13 +217,7 @@ function random(spot)
             delete cards[suit][face]; // Deletes this card from the deck (cards object)
             hasAce = true; // If the player has an ace, store this in a variable as true
         } 
-        else if (face == "Jack")
-        {
-            newImg.src = `Images/${faceLet}${suitLet}.png`; // Sets src of img element to img name
-            document.getElementById("userCards").appendChild(newImg); // Appends img element to div on webpage
-            delete cards[suit][face]; // Deletes this card from the deck (cards object)
-        }
-        else if (face == "Queen" || face == "King") // Same for ones below
+        else if (face == "Queen" || face == "King" || face == "Jack") // Same for ones below
         {
             newImg.src = `Images/${faceLet}${suitLet}.png`;
             document.getElementById("userCards").appendChild(newImg);
@@ -282,12 +276,7 @@ function random(spot)
 
         cardValue = cards[suit][face]; // Gets value of face property to determine the value of the card, used for the scoring system
 
-        if (face == "Ace" || face == "Jack")
-        {
-            dealerHiddenCard = `Images/${faceLet}${suitLet}.png`
-            delete cards[suit][face];
-        }
-        else if (face == "Queen" || face == "King") // Same for ones below
+        if (face == "Queen" || face == "King" || face == "Ace" || face == "Jack") // Same for ones below
         {
             dealerHiddenCard = `Images/${faceLet}${suitLet}.png`
             delete cards[suit][face];
@@ -337,12 +326,7 @@ function random(spot)
             delete cards[suit][face]; // Deletes this card from the deck (cards object)
             dealerHasAce = true; // If the player has an ace, store this in a variable as true
         }
-        else if (face == "Jack") {
-            newImg.src = `Images/${faceLet}${suitLet}.png`; // Sets src of img element to img name
-            document.getElementById("dealerCards").appendChild(newImg); // Appends img element to div on webpage
-            delete cards[suit][face]; // Deletes this card from the deck (cards object)
-        }
-        else if (face == "Queen" || face == "King") // Same for ones below
+        else if (face == "Queen" || face == "King" || face == "Jack") // Same for ones below
         {
             newImg.src = `Images/${faceLet}${suitLet}.png`;
             document.getElementById("dealerCards").appendChild(newImg);
@@ -364,14 +348,7 @@ function random(spot)
 
         if (dealerScore > 21) // If the dealer's score is over 21, the dealer loses.
         {
-            document.getElementById("dealBtn").disabled = true; // Disables the hit button.
-            document.getElementById("dealerScore").innerHTML = "Busted."; // Shows that the dealer has busted
             dealerBusted = true;
-        }
-        else if (dealerScore == 21) // If the dealer's score is 21, they win the game.
-        {
-            document.getElementById("dealBtn").disabled = true; // Disables the hit button 
-            document.getElementById("dealerScore").innerHTML = "21!!"; // Displays winning message
         }
     }
 };
@@ -421,7 +398,7 @@ function end() // Function to end the game
         document.getElementById("faceDown").src = dealerHiddenCard; // Displays dealer's hidden card.
 
         // Score system to determine who wins and loses the game
-        if (dealerBusted == false && playerScore < dealerScore) // If the dealer hasn't busted and greater than the player, they win
+        if (dealerBusted == false && playerScore < dealerScore) // If the dealer hasn't busted and is greater than the player, they win
         {
             document.getElementById("winningMsg").innerHTML = "Dealer Wins!";
         }
@@ -441,11 +418,10 @@ function end() // Function to end the game
         {
             document.getElementById("winningMsg").innerHTML = "Nobody Wins...";
         }
-        else if (dealerBusted == true && playerBusted == true && playerScore == dealerScore) // If both tie, nobody wins
+        else if (dealerBusted == false && playerBusted == false && playerScore == dealerScore) // If both tie, nobody wins
         {
             document.getElementById("winningMsg").innerHTML = "Push - Nobody Wins...";  
         }
-
         document.getElementById("resetBtn").disabled = false; // Enables the button to reset game
     }
 }
