@@ -378,7 +378,7 @@ function end() // Function to end the game
     document.getElementById("stayBtn").disabled = true; // Disables not needed buttons
     document.getElementById("hitBtn").disabled = true;
 
-    while (dealerScore < 17) // While dealer is under 17 in card value, draw another card
+    while (playerBusted == false && dealerScore < 17) // While dealer is under 17 in card value, draw another card
     {
         random('dealer');
     }
