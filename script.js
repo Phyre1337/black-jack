@@ -383,7 +383,7 @@ function end() // Function to end the game
         random('dealer');
     }
 
-    if (dealerScore >= 17) // If the dealer has 17 in card value or more, stop drawing cards and determine who won
+    if (playerBusted == true || dealerScore >= 17) // If the dealer has 17 in card value or more, stop drawing cards and determine who won
     {
         if (dealerScore > 21) // Checks if dealer has busted and displays score or that they busted.
         {
